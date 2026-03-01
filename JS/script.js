@@ -126,3 +126,14 @@ Object.keys(tabs).forEach(type => {
 //By default All tab load 
 updateDashboard();
 filterCards("All");
+// active tab
+
+function setActiveTab(activeType) {
+  Object.keys(tabs).forEach(type => {
+    tabs[type].classList.remove('bg-blue-500', 'text-white');
+    tabs[type].classList.add('bg-white', 'text-gray-500');
+  });
+
+  tabs[activeType].classList.remove('bg-white', 'text-gray-500');
+  tabs[activeType].classList.add('bg-blue-500', 'text-white');
+}
